@@ -25,3 +25,5 @@ jobs:
     - name: Test
       run: |
         python test/test_end_to_end.py
+        python test/test_csv_extract.py
+        python test/test_json_load.py
