@@ -30,7 +30,6 @@ jobs:
     steps:
       - name: Test
         run: |
-          git clone https://github.com/shaniblau/orientation-python.git
           pwd
           cd orientation-python
           pwd
