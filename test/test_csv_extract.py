@@ -5,7 +5,7 @@ from extract import csv_extract
 
 
 class TestCSVExtract(unittest.TestCase):
-    path: str = "/Users/shaniblau/Documents/pythonProjects/orientation-python/MadaReports - MadaReports.csv"
+    path: str = "../MadaReports - MadaReports.csv"
     data: list = csv_extract()
 
     def test_extract_func(self):
