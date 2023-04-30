@@ -31,6 +31,5 @@ jobs:
       - name: Test
         run: |
           cd ..
-          cd .github/workflows
           pwd
           python test_all.py
