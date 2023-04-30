@@ -28,6 +28,7 @@ jobs:
     - name: Test extract
       run: |
         pwd
+        echo $PYTHONPATH
         python test/test_csv_extract.py
     - name: Test load
       run: |
