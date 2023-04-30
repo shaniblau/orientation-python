@@ -10,7 +10,7 @@ class CSVExtract(Extract):
     def extract(path: str = p) -> list:
         data: list = []
         try:
-            with open("../MadaReports - MadaReports.csv", 'r') as file:
+            with open(path, 'r') as file:
                 reader = csv.DictReader(file)
                 for row in reader:
                     data.append(row)
