@@ -30,7 +30,6 @@ jobs:
     steps:
       - name: Test
         run: |
-          cd ..
           ls -l
           pwd
           python test_all.py
