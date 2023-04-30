@@ -4,7 +4,7 @@ import unittest
 from extract import csv_extract
 
 
-class TestCSVExtract(unittest.TestCase):
+class CSVExtractTest(unittest.TestCase):
     path: str = "../MadaReports - MadaReports.csv"
     data: list = csv_extract()
 

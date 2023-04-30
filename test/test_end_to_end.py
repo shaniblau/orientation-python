@@ -2,7 +2,7 @@ import os.path
 import unittest
 
 
-class Sanity(unittest.TestCase):
+class SanityTest(unittest.TestCase):
     path = '../mada_reports'
 
     def test_sanity(self):

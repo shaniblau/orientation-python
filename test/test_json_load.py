@@ -3,7 +3,7 @@ import unittest
 from load import JsonLoad
 
 
-class TestJsonLoad(unittest.TestCase):
+class JsonLoadTest(unittest.TestCase):
     data = []
     for i in range(100000):
         data.append(i)
