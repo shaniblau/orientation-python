@@ -1,7 +1,10 @@
 import csv
 import unittest
+import sys
 
-# from extract import csv_extract
+sys.path.append("orientation-python/extract/csv_extract.py")
+
+from extract import csv_extract
 
 
 class CSVExtractTest(unittest.TestCase):
