@@ -30,5 +30,6 @@ jobs:
     steps:
       - name: Test 
         run: |
+          cd ..
           ls ./*
           python test_all.py
