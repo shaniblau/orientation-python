@@ -32,4 +32,4 @@ jobs:
           python-version: "3.10"
         run: |
           cd ..
-          python test/test_all.py
+          python test_all.py
