@@ -30,7 +30,7 @@ jobs:
       run: |
         pwd
         echo here
-        export PYTHONPATH="/orientation-python/modules: /orientation-python/MadaReports - MadaReports.csv"$PYTHONPATH 
+        export PYTHONPATH="/orientation-python/modules/: /orientation-python/MadaReports - MadaReports.csv"$PYTHONPATH 
         echo $PYTHONPATH
         echo here
         python test/test_csv_extract.py
