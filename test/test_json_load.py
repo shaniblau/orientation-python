@@ -7,7 +7,7 @@ class TestJsonLoad(unittest.TestCase):
     data = []
     for i in range(100000):
         data.append(i)
-    with open("/Users/shaniblau/Documents/pythonProjects/new/fadw", 'r') as file:
+    with open("/Users/shaniblau/Documents/pythonProjects/orientation-python/fadw", 'r') as file:
         lines = file.read()
     items = lines.split("/n")[:-1]
 
