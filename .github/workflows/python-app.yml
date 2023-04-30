@@ -22,8 +22,12 @@ jobs:
         python -m pip install --upgrade pip
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Test
+    - name: Test sanity
       run: |
         python test/test_end_to_end.py
-        python test/test_csv_extract.py
+    - name: Test extract
+      run: |
+        python test/test_end_to_end.py
+    - name: Test load
+      run: |
         python test/test_json_load.py
