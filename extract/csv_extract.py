@@ -1,7 +1,7 @@
 import csv
 
 from extract.csv_config import path as p
-from extract.abs_extract import Extract
+from extract.extract import Extract
 
 
 class CSVExtract(Extract):
