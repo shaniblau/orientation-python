@@ -1,6 +1,6 @@
 import unittest
 
-from load import JsonLoad
+from modules.load import JsonLoad
 
 
 class JsonLoadTest(unittest.TestCase):

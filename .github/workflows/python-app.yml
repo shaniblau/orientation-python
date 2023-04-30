@@ -28,7 +28,7 @@ jobs:
     - name: Test extract
       run: |
         pwd
-        export PYTHONPATH=/orientation-python/extract:$PYTHONPATH 
+        export PYTHONPATH=/orientation-python/modules:$PYTHONPATH 
         echo $PYTHONPATH
         python test/test_csv_extract.py
     - name: Test load
