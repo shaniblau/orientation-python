@@ -9,7 +9,7 @@ permissions:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: macos
 
     steps:
     - uses: actions/checkout@v3
@@ -22,6 +22,16 @@ jobs:
         python -m pip install --upgrade pip
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Test
-      run: |
-        python test_all.py
+
+  test:
+
+    runs-on: macos
+
+    steps:
+      - name: Test
+        run: |
+          pwd
+          cd orientation-python
+          pwd
+          ls -l
+          python test_all.py
