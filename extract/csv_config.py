@@ -1,1 +1,1 @@
-path = "/Users/shaniblau/Documents/pythonProjects/new/MadaReports - MadaReports.csv"
+path = "/Users/shaniblau/Documents/pythonProjects/orientation-python/MadaReports - MadaReports.csv"
