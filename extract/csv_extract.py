@@ -8,7 +8,7 @@ class CSVExtract(Extract):
 
     @staticmethod
     def extract():
-        data: list = []
+        data = []
         try:
             with open(path, 'r') as file:
                 reader = csv.DictReader(file)
