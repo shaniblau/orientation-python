@@ -1,20 +1,19 @@
 import csv
-import unittest
 from extract import csv_extract
 
 
-class CSVExtractTest(unittest.TestCase):
+class CSVExtractTest():
     path: str = "../MadaReports - MadaReports.csv"
     data: list = csv_extract()
 
     def test_extract_func(self):
-        self.assertNotEqual(self.data, [])
+        assert self.data != []
 
     def test_hermeticity(self):
-        self.assertEqual(len(self.data), 1000)
+        assert len(self.data) == 1000
 
     def test_reliability(self):
-        self.assertTrue(self.check_equals(self.path))
+        assert self.check_equals(self.path) == True
 
     def check_equals(self, path):
         i = 0
@@ -28,7 +27,7 @@ class CSVExtractTest(unittest.TestCase):
         return True
 
     def test_file_not_exists(self):
-        self.assertTrue(self.check_error())
+        assert self.check_error() == True
 
     @staticmethod
     def check_error():
