@@ -2,18 +2,9 @@ import csv
 from extract import csv_extract
 
 
-class CSVExtractTest():
+class CSVExtractTest:
     path: str = "../MadaReports - MadaReports.csv"
     data: list = csv_extract()
-
-    def test_extract_func(self):
-        assert self.data != []
-
-    def test_hermeticity(self):
-        assert len(self.data) == 1000
-
-    def test_reliability(self):
-        assert self.check_equals(self.path) == True
 
     def check_equals(self, path):
         i = 0
@@ -26,9 +17,6 @@ class CSVExtractTest():
                         return False
         return True
 
-    def test_file_not_exists(self):
-        assert self.check_error() == True
-
     @staticmethod
     def check_error():
         try:
@@ -36,3 +24,22 @@ class CSVExtractTest():
         except FileNotFoundError:
             return True
         return False
+
+
+cet = CSVExtractTest()
+
+
+def test_extract_func():
+    assert cet.data != []
+
+
+def test_hermeticity():
+    assert len(cet.data) == 1000
+
+
+def test_reliability():
+    assert cet.check_equals(cet.path) == True
+
+
+def test_file_not_exists():
+    assert cet.check_error() == True
