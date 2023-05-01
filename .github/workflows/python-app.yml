@@ -24,5 +24,5 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Test
       run: |
-        $PYTHONPATH='orientation-python/MadaReports - MadaReports.csv:$PYTHONPATH'
+        $PYTHONPATH='/orientation-python/MadaReports - MadaReports.csv:$PYTHONPATH'
         pytest
