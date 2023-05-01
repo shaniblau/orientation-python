@@ -6,6 +6,11 @@ on:
 permissions:
   contents: read
 
+env:
+  AZURE_FUNCTIONAPP_NAME: 'etl'
+  AZURE_FUNCTIONAPP_PACKAGE_PATH: '.'      
+  PYTHON_VERSION: '3.9'
+
 jobs:
   ci:
 
