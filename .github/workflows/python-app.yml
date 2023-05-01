@@ -24,17 +24,5 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Test
       run: |
-        unittest
-    - name: Test sanity
-      run: |
-        python test/test_end_to_end.py
-    - name: Test extract
-
-      run: |
-        export PYTHONPATH="/orientation-python/MadaReports - MadaReports.csv":$PYTHONPATH
-        echo $PYTHONPATH
-        echo here
-        python test/test_csv_extract.py
-    - name: Test load
-      run: |
-        python test/test_json_load.py
+        pytest
+   
