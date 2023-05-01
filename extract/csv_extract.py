@@ -7,7 +7,7 @@ from extract.abs_extract import Extract
 class CSVExtract(Extract):
 
     @staticmethod
-    def extract() -> list:
+    def extract():
         data: list = []
         try:
             with open(path, 'r') as file:
