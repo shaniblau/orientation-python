@@ -28,7 +28,6 @@ jobs:
     - name: Test extract
 
       run: |
-        export PYTHONPATH="/orientation-python/extract":$PYTHONPATH
         export PYTHONPATH="/orientation-python/MadaReports - MadaReports.csv":$PYTHONPATH
         echo $PYTHONPATH
         echo here
