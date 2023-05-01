@@ -24,4 +24,6 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Test
       run: |
+        $PYTHONPATH='/orientation-python/extract':$PYTHONPATH
+        $PYTHONPATH='/orientation-python/load':$PYTHONPATH
         pytest
