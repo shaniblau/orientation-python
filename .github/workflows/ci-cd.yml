@@ -45,5 +45,5 @@ jobs:
         run: sudo apt-get install -y sshpass
       - name: Update Python app on VM
         run: |
-          sshpass -p ${{ secrets.SSH_PASSWORD }} ssh -o StrictHostKeyChecking=no azureuser@52.191.53.99 "mkdir -p /home/azureuser/app && cd /home/azureuser/app && git clone https://github.com:shaniblau/orientation-python.git && cd repo && pip install -r requirements.txt && python main.py"
+          sshpass -p ${{ secrets.SSH_PASSWORD }} ssh -o StrictHostKeyChecking=no azureuser@52.191.53.99 "mkdir -p /home/azureuser/app && cd /home/azureuser/app && git clone https://github.com/shaniblau/orientation-python.git && cd repo && pip install -r requirements.txt && python main.py"
           echo "App updated successfully!"
