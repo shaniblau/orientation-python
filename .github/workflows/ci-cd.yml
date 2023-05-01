@@ -6,11 +6,6 @@ on:
 permissions:
   contents: read
 
-env:
-  AZURE_FUNCTIONAPP_NAME: 'etl'
-  AZURE_FUNCTIONAPP_PACKAGE_PATH: '.'      
-  PYTHON_VERSION: '3.9'
-
 jobs:
   ci:
 
@@ -46,12 +41,9 @@ jobs:
           fetch-depth: 0
       - name: Install Poetry
         run: pipx install poetry
-      - name: 'Run Azure Functions Action'
-        uses: Azure/functions-action@v1
-        id: fa
-        with:
-          app-name: ${{ env.AZURE_FUNCTIONAPP_NAME }}
-          package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
-          publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }} # Remove publish-profile to use Azure RBAC
-          scm-do-build-during-deployment: true
-          enable-oryx-build: true
+      - name: Copy files to VM
+        run: |
+          sshpass -p ${{ secrets.SSH_PASSWORD }} scp -o StrictHostKeyChecking=no -r ./user@vm_ip:/app/
+      - name: Update Python App
+        run: |
+          sshpass -p ${{ secrets.SSH_PASSWORD }} ssh -o StrictHostKeyChecking=no user@vm_ip "cd /path/to/app_destination && git clone https://github.com/shaniblau/orientation-python.git && cd repo && pip install -r requirements.txt && python main.py"
