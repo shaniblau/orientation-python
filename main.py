@@ -1,5 +1,5 @@
-from modules.extract import csv_extract
-from modules.load import json_load
+from extract import csv_extract
+from load import json_load
 
 
 def main():

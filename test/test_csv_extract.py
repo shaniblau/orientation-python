@@ -1,6 +1,6 @@
 import csv
 import unittest
-from modules.extract import csv_extract
+from extract import csv_extract
 
 
 class CSVExtractTest(unittest.TestCase):
