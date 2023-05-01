@@ -45,7 +45,7 @@ jobs:
         run: pipx install poetry
       - name: Copy files to VM
         run: |
-          sshpass -p ${{ secrets.SSH_PASSWORD }} scp -o StrictHostKeyChecking=no -r ./user@vm_ip:/app
+          sshpass -p ${{ secrets.SSH_PASSWORD }} scp -o StrictHostKeyChecking=no -r . /user@vm_ip:/app
       - name: Update Python App
         run: |
           sshpass -p ${{ secrets.SSH_PASSWORD }} ssh -o StrictHostKeyChecking=no user@vm_ip "cd /path/to/app && git pull origin main && pip install -r requirements.txt && python main.py"
