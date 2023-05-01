@@ -12,3 +12,11 @@ def json_load_fixture():
 @pytest.fixture(scope="class")
 def csv_extract_fixture():
     return extract.csv_extract
+
+
+@pytest.fixture(scope="class")
+def fake_file_fixture():
+    with open("../fadw", 'r') as file:
+        lines = file.read()
+    items = lines.split("/n")[:-1]
+    return items
