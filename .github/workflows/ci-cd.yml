@@ -46,4 +46,4 @@ jobs:
       - name: Update Python app on VM
         run: |
           sshpass -p ${{ secrets.SSH_PASSWORD }} ssh -o StrictHostKeyChecking=no azureuser@52.191.53.99 "mkdir -p /home/azureuser/app && cd /home/azureuser/app && cd orientation-python && pip install -r requirements.txt && python main.py"
-          echo "App updated successfully"
+          echo "App updated successfully!"
