@@ -14,13 +14,12 @@ def check_equals(csv_extract_fixture, path: str = "../MadaReports - MadaReports.
 
 
 def test_extract_func(csv_extract_fixture):
-    assert csv_extract_fixture != []
+    assert csv_extract_fixture() != []
 
 
 def test_hermeticity(csv_extract_fixture):
-    assert len(csv_extract_fixture) == 1000
+    assert len(csv_extract_fixture()) == 1000
 
 
 def test_reliability(csv_extract_fixture):
-    assert check_equals(csv_extract_fixture) == True
-
+    assert check_equals(csv_extract_fixture()) == True

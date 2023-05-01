@@ -11,7 +11,7 @@ def json_load_fixture():
 
 @pytest.fixture
 def csv_extract_fixture():
-    return extract.csv_extract()
+    return extract.csv_extract
 
 
 @pytest.fixture
