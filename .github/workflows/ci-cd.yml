@@ -46,7 +46,7 @@ jobs:
       - name: connect to vm
         run: |
           sshpass -p ${{ secrets.SSH_PASSWORD }} ssh -o StrictHostKeyChecking=no azuruser@137.117.127.213
-          echo "App updated successfully"
+          pwd
       - name: install apps to vm
         run: |
           sudo apt update
@@ -55,6 +55,7 @@ jobs:
           sudo apt install -y python3-pip
       - name: upload the app
         run: |
+          cd /home
           pwd
           sudo mkdir /home/azureuser/app
           cd /home/azureuser/app 
