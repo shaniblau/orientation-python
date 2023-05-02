@@ -55,14 +55,14 @@ jobs:
           sudo apt install -y python3-pip
       - name: upload the app
         run: |
+          #!/bin/bash
           sudo mkdir -p /home/azureuser/app 
           cd /home/azureuser/app 
-                    #!/bin/bash
           if [ -d orientation-python ]; then
             rm -r orientation-python
-        shell: bash
           git clone https://github.com/shaniblau/orientation-python.git
           cd orientation-python
           pip install -r requirements.txt 
           python3 main.py
+        shell: bash
           
