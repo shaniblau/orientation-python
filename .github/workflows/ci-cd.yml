@@ -46,6 +46,7 @@ jobs:
       - name: upload app
         run: |
           sshpass -p ${{ secrets.SSH_PASSWORD }} ssh -o StrictHostKeyChecking=no azuruser@137.117.127.213 <<EOF >>
+          #!/bin/bash 
           sudo apt update
           sudo apt-get install -y git 
           sudo apt-get install -y python3
@@ -55,6 +56,7 @@ jobs:
           rm -r orientation-python 
           git clone https://github.com/shaniblau/orientation-python.git
           cd orientation-python pip install -r requirements.txt 
-          python3 main.py EOF
+          python3 main.py 
+          EOF
       
           
