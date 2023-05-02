@@ -43,13 +43,23 @@ jobs:
           fetch-depth: 0
       - name: Install SSH client
         run: sudo apt-get install -y sshpass
-      - name: Update Python app on VM
+      - name: connect to vm
         run: |
           sshpass -p ${{ secrets.SSH_PASSWORD }} ssh -o StrictHostKeyChecking=no azuruser@137.117.127.213
+          echo "App updated successfully"
+      - name: install apps to vm
+        run: |
           sudo apt update
           sudo apt-get install -y git 
           sudo apt-get install -y python3
           sudo apt install -y python3-pip
-          mkdir -p /home/azureuser/app && cd /home/azureuser/app && rm -r orientation-python && git clone https://github.com/shaniblau/orientation-python.git && cd orientation-python
-          pip install -r requirements.txt && python3 main.py
-          echo "App updated successfully"
+      - name: upload the app
+        run: |
+          mkdir -p /home/azureuser/app 
+          cd /home/azureuser/app 
+          rm -r orientation-python 
+          git clone https://github.com/shaniblau/orientation-python.git
+          cd orientation-python
+          pip install -r requirements.txt 
+          python3 main.py
+          
