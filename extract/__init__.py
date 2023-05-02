@@ -1,1 +1,1 @@
-from .csv_extract import csv_extract, CSVExtract
+from .csv_extract import csv_extract
