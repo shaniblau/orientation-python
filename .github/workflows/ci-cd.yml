@@ -46,6 +46,7 @@ jobs:
       - name: Update Python app on VM
         run: |
           sshpass -p ${{ secrets.SSH_PASSWORD }} ssh -o StrictHostKeyChecking=no azuruser@137.117.127.213
+          "sudo apt update" 
           "sudo apt-get install -Y git"  
           "sudo apt-get install -Y python3"
           "apt install -Y python3-pip"
