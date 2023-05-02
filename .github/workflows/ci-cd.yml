@@ -55,10 +55,10 @@ jobs:
           sudo apt install -y python3-pip
       - name: upload the app
         run: |
-          sudo mkdir -p /home/azureuser/app 
+          sudo mkdir /home/azureuser/app s
           cd /home/azureuser/app 
           pwd
-          ll
+          ls
           rm -r orientation-python 
           sudo git clone https://github.com/shaniblau/orientation-python.git
           cd orientation-python
