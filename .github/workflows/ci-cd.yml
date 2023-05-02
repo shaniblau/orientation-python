@@ -45,8 +45,7 @@ jobs:
         run: sudo apt-get install -y sshpass
       - name: connect to vm
         run: |
-          sshpass -p ${{ secrets.SSH_PASSWORD }} ssh -o StrictHostKeyChecking=no azuruser@137.117.127.213
-          pwd
+          sshpass -p ${{ secrets.SSH_PASSWORD }} ssh -o StrictHostKeyChecking=no azuruser@137.117.127.213 "pwd"
       - name: install apps to vm
         run: |
           sudo apt update
