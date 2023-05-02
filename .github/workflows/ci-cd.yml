@@ -51,7 +51,8 @@ jobs:
           rm -r orientation-python &&
           git clone https://github.com/shaniblau/orientation-python.git &&
           cd orientation-python &&
-          pip install -r requirements.txt  &&
+          pip install -r requirements.txt &&
+          pwd &&
           python3 main.py"
       
           
