@@ -1,7 +1,7 @@
 import csv
 
 
-def check_equals(csv_extract_fixture, path: str = "../MadaReports - MadaReports.csv"):
+def check_equals(csv_extract_fixture, path: str = "MadaReports - MadaReports.csv"):
     i = 0
     with open(path, 'r') as file:
         reader = csv.DictReader(file)
