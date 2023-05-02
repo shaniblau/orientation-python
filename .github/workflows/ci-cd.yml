@@ -55,7 +55,6 @@ jobs:
           sudo apt install -y python3-pip
       - name: upload the app
         run: |
-          #!/bin/bash
           sudo mkdir -p /home/azureuser/app 
           cd /home/azureuser/app 
           if [ -d orientation-python ]; then
