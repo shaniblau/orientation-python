@@ -57,8 +57,11 @@ jobs:
         run: |
           sudo mkdir -p /home/azureuser/app 
           cd /home/azureuser/app 
-          sudo rm -r orientation-python 
-          sudo git clone https://github.com/shaniblau/orientation-python.git
+                    #!/bin/bash
+          if [ -d orientation-python ]; then
+            rm -r orientation-python
+        shell: bash
+          git clone https://github.com/shaniblau/orientation-python.git
           cd orientation-python
           pip install -r requirements.txt 
           python3 main.py
