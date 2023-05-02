@@ -58,6 +58,7 @@ jobs:
           sudo mkdir -p /home/azureuser/app 
           cd /home/azureuser/app 
           pwd
+          ll
           rm -r orientation-python 
           sudo git clone https://github.com/shaniblau/orientation-python.git
           cd orientation-python
