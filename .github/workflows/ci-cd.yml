@@ -51,7 +51,7 @@ jobs:
           sudo apt-get install -y python3
           sudo apt install -y python3-pip
           echo "App updated successfully0"
-          mkdir -p /home/azureuser/app && cd /home/azureuser/app && rm -r orientation-python && git clone https://github.com/shaniblau/orientation-python.git && cd orientation-python
+          mkdir -p app && cd app && rm -r orientation-python && git clone https://github.com/shaniblau/orientation-python.git && cd orientation-python
           echo "App updated successfully1"
           pip install -r requirements.txt && python3 main.py
           echo "App updated successfully2"
