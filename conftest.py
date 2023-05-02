@@ -16,7 +16,7 @@ def csv_extract_fixture():
 
 @pytest.fixture
 def fake_file_fixture():
-    with open("../fadw", 'r') as file:
+    with open("fadw", 'r') as file:
         lines = file.read()
     items = lines.split("/n")[:-1]
     return items
