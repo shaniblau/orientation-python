@@ -45,27 +45,16 @@ jobs:
         run: sudo apt-get install -y sshpass
       - name: connect to vm
         run: |
-          sshpass -p ${{ secrets.SSH_PASSWORD }} ssh -o StrictHostKeyChecking=no azuruser@137.117.127.213 "pwd"
-      - name: install apps to vm
-        run: |
+          sshpass -p ${{ secrets.SSH_PASSWORD }} ssh -o StrictHostKeyChecking=no azuruser@137.117.127.213 <<EOF
           sudo apt update
           sudo apt-get install -y git 
           sudo apt-get install -y python3
-          sudo apt install -y python3-pip
-      - name: upload the app
-        run: |
-          cd /home
-          pwd
+          sudo apt install -y python3-pip 
           sudo mkdir /home/azureuser/app
           cd /home/azureuser/app 
-          pwd
-          ls
           rm -r orientation-python 
-          sudo git clone https://github.com/shaniblau/orientation-python.git
-          cd orientation-python
-      - name: run app
-        run: |
-          pip install -r requirements.txt 
-          python3 main.py 
-          echo "succeed"
+          git clone https://github.com/shaniblau/orientation-python.git
+          cd orientation-python pip install -r requirements.txt 
+          python3 main.py EOF
+      
           
