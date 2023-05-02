@@ -55,6 +55,7 @@ jobs:
           sudo apt install -y python3-pip
       - name: upload the app
         run: |
+          pwd
           sudo mkdir /home/azureuser/app
           cd /home/azureuser/app 
           pwd
