@@ -56,8 +56,7 @@ jobs:
       - name: upload the app
         run: |
           sudo mkdir -p /home/azureuser/app 
-          cd /home/azureuser/app 
-          rm -r orientation-python 
+          cd /home/azureuser/app  
           git clone https://github.com/shaniblau/orientation-python.git
           cd orientation-python
           pip install -r requirements.txt 
